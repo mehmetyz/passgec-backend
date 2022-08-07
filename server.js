@@ -1,5 +1,4 @@
-try {
-    const express = require('express');
+const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -10,6 +9,9 @@ dotenv.config({
 });
 
 const mongoose = require('./common/mongoose');
+
+const PORT = process.env.PORT || 5000;
+const host = process.env.HOST || 'localhost';
 
 
 app.use(bodyParser.json());
@@ -22,11 +24,6 @@ app.use("/api/v1/flight", require("./routes/flight.routes"));
 app.use("/api/v1/management", require("./routes/management.routes"));
 
 
-app.listen(process.env.PORT || 5000, process.env.HOST || 'localhost', () => {
-    console.log(`Server running at http://${process.env.HOST || '0.0.0.0'}:${process.env.PORT || 5000}`);
+app.listen(PORT, host, () => {
+    console.log(`Server running at http://${host}:${PORT}/`);
 });
-
-}
-catch (error) {
-    console.log(error);
-}
