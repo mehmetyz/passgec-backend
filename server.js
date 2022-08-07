@@ -22,5 +22,5 @@ app.use("/api/v1/management", require("./routes/management.routes"));
 
 
 app.listen(process.env.PORT || 5000, process.env.HOST || 'localhost', () => {
-    console.log(`Server running at http://${host}:${PORT}/`);
+    console.log(`Server running at http://${process.env.HOST || 'localhost'}:${process.env.PORT || 5000}`);
 });
