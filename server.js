@@ -8,12 +8,7 @@ dotenv.config({
     path: __dirname + '/.env'
 });
 
-
-
 const mongoose = require('./common/mongoose');
-
-const PORT = process.env.PORT || 5000;
-const host = process.env.HOST || 'localhost';
 
 
 app.use(bodyParser.json());
@@ -26,6 +21,6 @@ app.use("/api/v1/flight", require("./routes/flight.routes"));
 app.use("/api/v1/management", require("./routes/management.routes"));
 
 
-app.listen(PORT, host, () => {
+app.listen(process.env.PORT || 5000, process.env.HOST || 'localhost', () => {
     console.log(`Server running at http://${host}:${PORT}/`);
 });
