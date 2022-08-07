@@ -7,9 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "engines": {
-    "node": "0.16.x"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/binary-brains-dev/thy-hackathon-project.git"
