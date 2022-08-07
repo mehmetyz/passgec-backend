@@ -1,4 +1,5 @@
-const express = require('express');
+try {
+    const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -24,3 +25,8 @@ app.use("/api/v1/management", require("./routes/management.routes"));
 app.listen(process.env.PORT || 5000, process.env.HOST || 'localhost', () => {
     console.log(`Server running at http://${process.env.HOST || '0.0.0.0'}:${process.env.PORT || 5000}`);
 });
+
+}
+catch (error) {
+    console.log(error);
+}
